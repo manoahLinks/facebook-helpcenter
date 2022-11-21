@@ -10,7 +10,7 @@ const Footer = () => {
                 <h4 className="m-1">Careers</h4>
                 <h4 className="m-1">Cookies</h4>
                 <h4 className="m-1">Create Ad</h4>
-                <h4 className="">Create Page</h4>
+                <h4 className="m-1">Create Page</h4>
             </div>
         </div>
      );
