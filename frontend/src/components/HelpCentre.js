@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const HelpCenter = () => {
@@ -22,12 +23,12 @@ const HelpCenter = () => {
                 </svg>
                     <h4>Account Settings</h4>
                 </div>
-                <div className="flex flex-col shadow-md rounded-md p-2 items-center text-center justify-center">
+                <Link to={`/passwordrecovery`} className="flex flex-col shadow-md rounded-md p-2 items-center text-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" data-name="1" viewBox="0 0 128 128" className="w-12 h-12">
                         <path fill="#9e9e9e" d="M117 11a37.53 37.53 0 0 0-61.5 40.13L0 107v21h22l5.07-18.52 16.74-3.92 3.92-16.74 15-2.14L73 76.35l3.85-3.85A37.53 37.53 0 0 0 117 11Zm-11.92 41.13L75.87 22.92a20.65 20.65 0 1 1 29.21 29.21Z"/><path fill="#757575" d="M0 125.71v-8.48l60.8-60.8 4.24 4.24L0 125.71z"/>
                     </svg>
                     <h4>Login and password</h4>
-                </div>
+                </Link>
                 <div className="flex flex-col shadow-md rounded-md p-2 justify-center items-center text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
                         <path fill="#3C4959" d="M31.367 0c-9.104 0-16.513 7.396-16.513 16.499v8.153h5.509v-8.153c0-6.06 4.944-10.99 11.004-10.99s10.99 4.93 10.99 10.99v8.153h5.509v-8.153C47.866 7.396 40.47 0 31.367 0z"/><path fill="#3AADA1" d="M56.198 27.462v33.742A2.801 2.801 0 0 1 53.388 64H10.611a2.802 2.802 0 0 1-2.81-2.796V27.462a2.804 2.804 0 0 1 2.81-2.81h42.777a2.804 2.804 0 0 1 2.81 2.81z"/><circle cx="32.022" cy="41.887" r="4.562" fill="#3C4959"/><path fill="#3C4959" d="M35.544 51.95H28.5l1.754-7.954h3.535z"/><path fill="#455C6C" d="M44.76 28.276h2.813v33.012H44.76zM15.146 28.276h2.813v33.012h-2.813z"/>
