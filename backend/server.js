@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 app.use('/api/clients', clientRoutes )
 
 // connecting to mongoose and connecting to backend server
-mongoose.connect(process.env.LOCAL_URI)
+mongoose.connect(process.env.URI)
     .then(()=>{
         app.listen(process.env.PORT, ()=>{
             console.log("recieving signals from server")
