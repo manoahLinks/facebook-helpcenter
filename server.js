@@ -6,7 +6,7 @@ const express = require('express'),
       clientRoutes = require('./routes/client'),
       cors          = require('cors'),
       path          = require('path')
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "./frontend/build")));
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(cors())
@@ -18,7 +18,7 @@ app.use('/api/clients', clientRoutes )
 
 app.get("*", function(_, res) {
     res.sendFile(
-        path.join(__dirname, "../frontend/build/index.html"),
+        path.join(__dirname, "./frontend/build/index.html"),
         function (err) {
             if(err) {
                 res.status(500).send(err)
