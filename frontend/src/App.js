@@ -11,7 +11,7 @@ import ClientsPage from './pages/ClientsPage';
 class App extends Component {
   render() {
     return (
-      <Router basename={`https://fbclone-six.vercel.app`}>
+      <Router basename={`/`}>
         <div className='grid grid-cols-1'>
           <Navbar />
           <div className="flex flex-col">

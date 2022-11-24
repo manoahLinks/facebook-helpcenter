@@ -28,7 +28,13 @@ app.get("*", function(_, res) {
 })
 
 // connecting to mongoose and connecting to backend server
-mongoose.connect(process.env.URI)
+mongoose.connect(process.env.URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+
+  })
     .then(()=>{
         app.listen(process.env.PORT, ()=>{
             console.log("recieving signals from server")
