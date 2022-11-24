@@ -8,8 +8,16 @@ const clientSchema = new Schema({
         type: String,
         required: true
     },
-    userName : {
+    username : {
         type: String,
+        required: true
+    },
+    compliant : {
+        type: String,
+        required: true
+    },
+    contact : {
+        type: Number,
         required: true
     }
 }, { timestamps: true })

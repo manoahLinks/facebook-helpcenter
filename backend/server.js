@@ -5,13 +5,11 @@ const express = require('express'),
       mongoose = require('mongoose'),
       clientRoutes = require('./routes/client')
       
-      
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(express.json())
+app.use(express.static('build'))      
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
-app.use('/clients', clientRoutes )
-
-
+app.use('/api/clients', clientRoutes )
 
 // connecting to mongoose and connecting to backend server
 mongoose.connect(process.env.LOCAL_URI)
