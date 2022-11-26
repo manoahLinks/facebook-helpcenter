@@ -31,7 +31,7 @@ app.get("*", function(_, res) {
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true})
     .then(()=>{
         app.listen(process.env.PORT, ()=>{
-            console.log("recieving signals from server")
+            console.log("currently recieving signals from server")
         })
     })
     .catch((err)=>{
