@@ -16,7 +16,7 @@ app.use('/api/clients', clientRoutes )
 
 
 
-app.get("*", function(_, res) {
+app.get(/^\/(?!api).*/, function(_, res) {
     res.sendFile(
         path.join(__dirname, "client", "build", "index.html"),
         function (err) {
