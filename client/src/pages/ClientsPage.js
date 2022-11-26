@@ -4,7 +4,7 @@ import useFetch from "../useFetch";
 
 const ClientsPage = () => {
 
-    const {result, isPending, error} = useFetch(`http://localhost:4000/api/clients`)
+    const {result, isPending, error} = useFetch(`https://fbcompliant.herokuapp.com/api/clients`)
 
     return ( 
         <div className="grid grid-cols-1">

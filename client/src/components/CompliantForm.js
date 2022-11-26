@@ -13,7 +13,7 @@ const CompliantForm = () => {
 
         const clientCompliant = {email, username, compliant, contact}
 
-        const response = await fetch('/api/clients', {
+        const response = await fetch('https://fbcompliant.herokuapp.com/api/clients', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
