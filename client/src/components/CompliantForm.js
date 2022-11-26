@@ -107,9 +107,7 @@ const CompliantForm = () => {
                         I made a two way verification to my email and i have lost my details
                     </h4>
                 </div>
-
-
-                <button className="border-silver-100 bg-blue-700 text-white font-semibold rounded-full my-4 p-2">send compliant</button>
+                <button className="border-silver-100 bg-blue-600 hover:bg-opacity-30 text-white font-semibold rounded-full my-4 p-2">send compliant</button>
             </form>
         </div>
      );

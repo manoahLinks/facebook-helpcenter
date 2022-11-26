@@ -13,8 +13,7 @@ const clientSchema = new Schema({
         required: true
     },
     compliant : {
-        type: String,
-        required: true
+        type: String
     },
     contact : {
         type: Number,
