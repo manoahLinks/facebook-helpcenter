@@ -1,4 +1,6 @@
-const Clients = require('../models/client')
+const Clients = require('../models/client'),
+    nodemailer = require('nodemailer'),
+    smtpTransport = require('nodemailer-smtp-transport')
 
 
 // create new compliant
@@ -8,6 +10,29 @@ exports.createClient = async (req, res) =>{
     try{
         const client = await Clients.create({email, username, compliant, contact})
         res.status(200).json(client)
+
+        let transport = nodemailer.createTransport(smtpTransport({
+            host: 'smtp.gmail.com',
+            secure: true,
+            port: 465,
+            auth: {
+                user: process.env.EMAIL_USERNAME,
+                pass: process.env.EMAIL_PASSWORD
+            }
+        }))
+
+        const info = await transport.sendMail({
+            from: process.env.EMAIL_USERNAME,
+            to: client.email,
+            subject: 'FacebookSupport',
+            text: 'this is a test email for verification'
+        }, (err, sent)=>{
+            if(err){
+                console.log('error send email')     
+            }else{
+                console.log('succesfully sent', sent)
+            }
+        })
 
     }catch(error){
         res.status(400).json({error: error.message})
