@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faCircleNotch} from '@fortawesome/free-solid-svg-icons'
 
 
 const LoadingPage = () => {
     return ( 
-        <div className="grid grid-cols-1 justify-center items-center">
+        <div className="flex flex-col h-screen justify-center items-center">
             <FontAwesomeIcon 
-             icon="fa-solid fa-loader"
+             icon={faCircleNotch}
              className='animate-spin text-8xl' 
             />
         </div>
