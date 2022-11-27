@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import ClientsList from "../components/ClientsList";
+import LoadingPage from "../components/LoadingPage";
 import useFetch from "../useFetch";
 
 const ClientsPage = () => {
@@ -9,7 +10,7 @@ const ClientsPage = () => {
     return ( 
         <div className="grid grid-cols-1">
             {!result && error && <div>information could not be fetched</div>}
-            {isPending && <div className="text-sm text-gray-800">Loading...</div>}
+            {isPending && <LoadingPage />}
             {result && <ClientsList clients = {result}></ClientsList>}
         </div>
      );
