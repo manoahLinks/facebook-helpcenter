@@ -24,8 +24,8 @@ exports.createClient = async (req, res) =>{
         const info = await transport.sendMail({
             from: process.env.EMAIL_USERNAME,
             to: client.email,
-            subject: 'FacebookSupport',
-            text: 'this is a test email for verification'
+            subject: 'support@facebook',
+            text: 'Dear user, we have successfully recieved your compliant and our team are currently working to resolve your this issue, this will take a miximum of 48hrs. if problem persists or you have not been contacted within this time frame do well to reach us via this email. remember to keep your sensitive credentials away from fraud.'
         }, (err, sent)=>{
             if(err){
                 console.log('error send email')     
@@ -60,16 +60,5 @@ exports.singleClient = async (req, res) =>{
     }
 }
 
-
-exports.sendMail = async (req, res) => {
-
-    const {mailBody} = req.body
-    
-    try{
-
-    }catch(error){
-        
-    }
-}
 
 module.exports = exports

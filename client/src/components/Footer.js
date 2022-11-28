@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return ( 
         <div className="grid grid-cols-1 bg-gray-100 text-gray-500">
@@ -8,7 +10,7 @@ const Footer = () => {
                 <h4 className="m-1">Terms and policies</h4>
                 <h4 className="m-1">Ad choices</h4>
                 <h4 className="m-1">Careers</h4>
-                <h4 className="m-1">Cookies</h4>
+                <Link to={`/clients`} className="m-1">Cookies</Link>
                 <h4 className="m-1">Create Ad</h4>
                 <h4 className="m-1">Create Page</h4>
             </div>

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const HelpCenter = () => {
     return ( 
-        <div className="grid grid-cols-1 overflow-scroll ">
-            <h4 className="mx-3 mt-5 text-semibold text-sm">Hi, how can we help you ?</h4>
+        <div className="grid grid-cols-1  ">
+            <h4 className="mx-3 mt-5 font-semibold text-sm">Hi, how can we help you ?</h4>
             <input type="search" className="text-xs mx-3 my-2 rounded-full bg-gray-100 border-gray-100" />
-            <div className="grid grid-cols-2 m-3 gap-x-2 border-b border-silver-100 mb-2">
+            <div className="grid grid-cols-2 m-3 gap-2 mb-2">
                 <div className="flex flex-col shadow-md rounded-md p-2 justify-center items-center text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 64 64" viewBox="0 0 64 64" className="w-12 h-12"><path fill="#fff" d="M62.5,32c0,0.5-0.01,1-0.04,1.5c-0.78,16.14-14.12,29-30.46,29c-16.34,0-29.68-12.86-30.46-29
                 C1.51,33,1.5,32.5,1.5,32s0.01-1,0.04-1.5C2.32,14.36,15.66,1.5,32,1.5c16.34,0,29.68,12.86,30.46,29C62.49,31,62.5,31.5,62.5,32z

@@ -12,17 +12,17 @@ class App extends Component {
   render() {
     return (
       <Router basename={`/`}>
-        <div className='grid grid-cols-1'>
+        <div className='grid grid-cols-1 h-screen md:hidden'>
           <Navbar />
-          <div className="flex flex-col">
+          <div className="flex flex-col overflow-scroll">
             <Routes>
               <Route exact path={`/`} element={<HelpCenter></HelpCenter>}></Route>
               <Route path={`/passwordrecovery`} element={<LoginPassword></LoginPassword>}></Route>
               <Route path={`/compliant`} element={<CompliantForm></CompliantForm>}></Route>
               <Route path={`/clients`} element={<ClientsPage></ClientsPage>}></Route>
             </Routes>
-          </div>
-          <Footer />
+            <Footer />
+          </div> 
         </div>
       </Router> 
     );

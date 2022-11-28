@@ -13,7 +13,7 @@ const CompliantForm = () => {
 
         const clientCompliant = {email, username, compliant, contact}
 
-        const response = await fetch('https://fbcompliant.herokuapp.com/api/clients', {
+        const response = await fetch('http://localhost:4000/api/clients', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,10 +28,10 @@ const CompliantForm = () => {
             console.log(error)
         }
         if(response.ok){
-            setEmail(null)
-            setUsername(null)
-            setCompliant(null)
-            setError(null)
+            setEmail('')
+            setUsername('')
+            setCompliant('')
+            setError('')
             console.log('compliant successfully recorded', json)
         }
 
@@ -81,10 +81,11 @@ const CompliantForm = () => {
                  type="number"
                  className="text-xs border border-gray-100 bg-gray-50 rounded-md"
                  onChange={(e)=>{setContact(e.target.value)}}
+                 value={contact}
                 />
                 
                 <label htmlFor="compliant" className="mt-2 font-semibold">Select compliant</label>
-                <div className="m-1 rounded-md border border-silver-100 p-1 flex">
+                <div className="m-1 rounded-md border border-silver-100 p-3 flex">
                     <input 
                      type="radio" 
                      name="compliant" 
@@ -96,7 +97,7 @@ const CompliantForm = () => {
                     </h4>
                 </div>
 
-                <div className="m-1 rounded-md border-silver-100 p-1 flex">
+                <div className="m-1 rounded-md border border-silver-100 p-3 flex">
                     <input 
                      type="radio" 
                      name="compliant" 

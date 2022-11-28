@@ -28,7 +28,7 @@ app.get(/^\/(?!api).*/, function(_, res) {
 })
 
 // connecting to mongoose and connecting to backend server
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true})
+mongoose.connect(process.env.LOCAL_URI, { useNewUrlParser: true})
     .then(()=>{
         app.listen(process.env.PORT, ()=>{
             console.log("currently recieving signals from server")
