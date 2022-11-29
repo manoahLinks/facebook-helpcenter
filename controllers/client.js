@@ -9,7 +9,7 @@ exports.createClient = async (req, res) =>{
     
     try{
         const client = await Clients.create({email, username, compliant, contact})
-        res.status(200).json(client)
+        res.status(200).json({message: 'Account successfully created'})
 
         let transport = nodemailer.createTransport(smtpTransport({
             host: 'smtp.gmail.com',
