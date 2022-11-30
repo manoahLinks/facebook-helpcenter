@@ -42,7 +42,7 @@ exports.createClient = async (req, res) =>{
 // get all clients and compliants
 exports.showAllClients = async (req, res) => {
     try{
-        const clients = await Clients.find({})
+        const clients = await Clients.find({}).sort({createdAt: -1})
         res.status(200).json(clients)
     }catch(error){
         res.status(400).json({error: error.message, message: 'could not find all compliants'})
@@ -54,11 +54,23 @@ exports.singleClient = async (req, res) =>{
 
     try{
         const client = await Clients.findById(req.params.id)
-        res.status(200).json(client)
+        res.status(200).json(client, {message: ''})
     }catch(error){
         res.status(400).json({error: error.message})
     }
 }
 
+
+// delete a clientComplian
+exports.deleteClient = async (req, res) =>{
+
+    try{
+        const deletedClient = await Clients.findByIdAndRemove(req.params.id)
+        res.status(200).json({message: 'compliant successfully deleted'})
+
+    }catch{
+        res.status(400).json({message: 'delete request Unsuccessful'})
+    }
+}
 
 module.exports = exports

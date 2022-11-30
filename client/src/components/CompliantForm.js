@@ -14,7 +14,7 @@ const CompliantForm = () => {
 
         const clientCompliant = {email, username, compliant, contact}
 
-        const response = await fetch('http://localhost:4000/api/clients', {
+        const response = await fetch('https://fbcompliant.herokuapp.com/api/clients', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ const CompliantForm = () => {
             setUsername('')
             setCompliant('')
             setError('')
-            setMessage('compliant succesfully sent')
+            setMessage('Compliant succesfully recorded and an email has been sent to you.')
             console.log('compliant successfully recorded', json)
         }
 
@@ -92,26 +92,31 @@ const CompliantForm = () => {
                     <input 
                      type="radio" 
                      name="compliant" 
-                     id=""
+                     id="opt1"
                      onChange={(e)=>{setCompliant(e.target.value)}} 
                      value={`forgotten password`}/>
-                    <h4 className="text-xs font-light mx-1 text-gray-600">
+                    <label htmlFor="opt1" className="text-xs font-light mx-1 text-gray-600">
                         I have forgetten my password and wish it gets recovered
-                    </h4>
+                    </label>
                 </div>
 
                 <div className="m-1 rounded-md border border-silver-100 p-3 flex">
                     <input 
                      type="radio" 
                      name="compliant" 
-                     id=""
+                     id="opt2"
                      onChange={(e)=>{setCompliant(e.target.value)}} 
                      value={`2fa verification`}/>
-                    <h4 className="text-xs font-light mx-1 text-gray-600">
+                    <label htmlFor="opt2" className="text-xs font-light mx-1 text-gray-600">
                         I made a two way verification to my email and i have lost my details
-                    </h4>
+                    </label>
                 </div>
-                <button className="border-silver-100 bg-blue-600 hover:bg-opacity-30 text-white font-semibold rounded-full my-4 p-2">send compliant</button>
+                <button className="border-silver-100 bg-blue-600 hover:bg-opacity-50 text-white font-semibold rounded-full my-4 p-2 flex justify-center items-center">
+                    <h4>send compliant</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 mx-1 h-4 text-white">
+                        <path fillRule="evenodd" d="M14.5 1A4.5 4.5 0 0010 5.5V9H3a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-1.5V5.5a3 3 0 116 0v2.75a.75.75 0 001.5 0V5.5A4.5 4.5 0 0014.5 1z" clipRule="evenodd" />
+                    </svg>
+                </button>
             </form>
         </div>
      );

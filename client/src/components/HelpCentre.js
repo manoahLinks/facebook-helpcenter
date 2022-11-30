@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HelpCenter = () => {
     return ( 
         <div className="grid grid-cols-1  ">
-            <h4 className="mx-3 mt-5 font-semibold text-sm">Hi, how can we help you ?</h4>
+            <h4 className="mx-3 mt-5 font-semibold text-gray-600 text-sm">Hi, how can we help you ?</h4>
             <input type="search" className="text-xs mx-3 my-2 rounded-full bg-gray-100 border-gray-100" />
             <div className="grid grid-cols-2 m-3 gap-2 mb-2">
                 <div className="flex flex-col shadow-md rounded-md p-2 justify-center items-center text-center">

@@ -7,7 +7,8 @@ router.route('/')
     .post(controllers.createClient)
 
 router.route('/:id')
-    .get(controllers.singleClient)    
+    .get(controllers.singleClient)
+    .delete(controllers.deleteClient)    
 
 
 module.exports = router    
