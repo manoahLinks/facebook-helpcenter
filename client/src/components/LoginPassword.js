@@ -16,10 +16,10 @@ const LoginPassword = () => {
                 <h4 className="my-1">if you know your current password you can change it.</h4>
                 <h4 className="font-semibold mb-2">When you create a new password, keep in mind:</h4>
                 <ul className="grid grid-cols-1 gap-y-2 text-xs">
-                    <li>Your password should be atleast 8 characters long.</li>
-                    <li>The password should be easy for you to remember but difficult for others to guess</li>
-                    <li>Your Facebook password should be different than the passwords you use to log into other accounts, like your email or bank account</li>
-                    <li>Your pasword should not be your email, phonenumber or birthday</li>
+                    <li className="mt-2">Your password should be atleast 8 characters long.</li>
+                    <li className="mt-2">The password should be easy for you to remember but difficult for others to guess</li>
+                    <li className="mt-2">Your Facebook password should be different than the passwords you use to log into other accounts, like your email or bank account</li>
+                    <li className="mt-2">Your pasword should not be your email, phonenumber or birthday</li>
                 </ul>
                 <h4>if you're having trouble changing your password, learn how to get login and password help.</h4>
             </div>
@@ -42,8 +42,8 @@ const LoginPassword = () => {
                         <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
                     </svg>
                 </Link>
-                <Link  className="flex justify-between items-center p-2 rounded-md bg-gray-100 font-semibold m-1">
-                    <h4></h4>
+                <Link to={`/compliant`} className="flex justify-between items-center p-2 rounded-md bg-gray-100 font-semibold m-1">
+                    <h4>Identification bridged</h4>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                         <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
                     </svg>

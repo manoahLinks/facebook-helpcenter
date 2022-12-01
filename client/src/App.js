@@ -4,6 +4,7 @@ import HelpCenter from './components/HelpCentre';
 import LoginPassword from './components/LoginPassword';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import SuccessPage from './components/successPage';
 import CompliantForm from './components/CompliantForm';
 import ClientsPage from './pages/ClientsPage';
 
@@ -20,6 +21,7 @@ class App extends Component {
               <Route path={`/passwordrecovery`} element={<LoginPassword></LoginPassword>}></Route>
               <Route path={`/compliant`} element={<CompliantForm></CompliantForm>}></Route>
               <Route path={`/clients`} element={<ClientsPage></ClientsPage>}></Route>
+              <Route path={`/success`} element={<SuccessPage></SuccessPage>}></Route>
             </Routes>
             <Footer />
           </div> 

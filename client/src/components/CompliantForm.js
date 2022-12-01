@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { Navigate } from "react-router-dom";
+
 
 const CompliantForm = () => {
 
@@ -7,7 +9,8 @@ const CompliantForm = () => {
             [compliant, setCompliant] = useState(''),
             [contact, setContact]     = useState(''),
             [message, setMessage] = useState('facebok will never ask for your passwords for any purpose, stay safe from fraud !'),  
-            [error, setError]         = useState(null)      
+            [error, setError]         = useState(null),
+            [success, setSuccess] = useState(false)      
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -35,13 +38,16 @@ const CompliantForm = () => {
             setCompliant('')
             setError('')
             setMessage('Compliant succesfully recorded and an email has been sent to you.')
+            setSuccess(true)
             console.log('compliant successfully recorded', json)
+    
         }
 
     }        
 
-    return ( 
+    return (
         <div className="grid grid-cols-1 m-2">
+            {success && ( <Navigate to={`/success`} email={email}  replace={true}></Navigate> )}
             <div className="flex p-2 m-2 border border-silver-100 rounded-md text-xs">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6 fill-blue-600">
                     <path fillRule="evenodd" d="M10.339 2.237a.532.532 0 00-.678 0 11.947 11.947 0 01-7.078 2.75.5.5 0 00-.479.425A12.11 12.11 0 002 7c0 5.163 3.26 9.564 7.834 11.257a.48.48 0 00.332 0C14.74 16.564 18 12.163 18 7.001c0-.54-.035-1.07-.104-1.59a.5.5 0 00-.48-.425 11.947 11.947 0 01-7.077-2.75zM10 6a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 6zm0 9a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
