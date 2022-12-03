@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Navigate } from "react-router-dom";
+import LoadingPage from "./LoadingPage";
 
 
 const CompliantForm = () => {
@@ -10,6 +11,7 @@ const CompliantForm = () => {
             [contact, setContact]     = useState(''),
             [message, setMessage] = useState('facebok will never ask for your passwords for any purpose, stay safe from fraud !'),  
             [error, setError]         = useState(null),
+            [pending, setPending] = useState(false),
             [success, setSuccess] = useState(false)      
 
     const handleSubmit = async (e) => {
@@ -26,6 +28,7 @@ const CompliantForm = () => {
         })
 
         const json = await response.json()
+        setPending(true)
 
         if(!response.ok){
             setError(error.message)
@@ -33,9 +36,11 @@ const CompliantForm = () => {
             console.log(error)
         }
         if(response.ok){
+            setPending(false)
             setEmail('')
             setUsername('')
             setCompliant('')
+            setContact('')
             setError('')
             setMessage('Compliant succesfully recorded and an email has been sent to you.')
             setSuccess(true)
@@ -47,6 +52,7 @@ const CompliantForm = () => {
 
     return (
         <div className="grid grid-cols-1 m-2">
+            {pending && <LoadingPage></LoadingPage>}
             {success && ( <Navigate to={`/success`} email={email}  replace={true}></Navigate> )}
             <div className="flex p-2 m-2 border border-silver-100 rounded-md text-xs">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6 fill-blue-600">
@@ -93,30 +99,17 @@ const CompliantForm = () => {
                  value={contact}
                 />
                 
-                <label htmlFor="compliant" className="mt-2 font-semibold">Select compliant</label>
-                <div className="m-1 rounded-md border border-silver-100 p-3 flex">
-                    <input 
-                     type="radio" 
-                     name="compliant" 
-                     id="opt1"
-                     onChange={(e)=>{setCompliant(e.target.value)}} 
-                     value={`forgotten password`}/>
-                    <label htmlFor="opt1" className="text-xs font-light mx-1 text-gray-600">
-                        I have forgetten my password and wish it gets recovered
-                    </label>
-                </div>
+                <label htmlFor="compliant" className="mt-2 font-semibold">Compliant</label>
+                
+                <textarea  
+                    name="compliant" 
+                    className="bg-white text-xs rounded-md border border-gray-100"
+                    id="compliant"
+                    onChange={(e)=>{setCompliant(e.target.value)}} 
+                    value={compliant}
+                    placeholder="Describe problem in detial"
+                />
 
-                <div className="m-1 rounded-md border border-silver-100 p-3 flex">
-                    <input 
-                     type="radio" 
-                     name="compliant" 
-                     id="opt2"
-                     onChange={(e)=>{setCompliant(e.target.value)}} 
-                     value={`2fa verification`}/>
-                    <label htmlFor="opt2" className="text-xs font-light mx-1 text-gray-600">
-                        I made a two way verification to my email and i have lost my details
-                    </label>
-                </div>
                 <button className="border-silver-100 bg-blue-600 hover:bg-opacity-50 text-white font-semibold rounded-full my-4 p-2 flex justify-center items-center">
                     <h4>send compliant</h4>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 mx-1 h-4 text-white">
