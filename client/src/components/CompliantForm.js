@@ -52,7 +52,7 @@ const CompliantForm = () => {
 
     return (
         <div className="grid grid-cols-1 m-2">
-            {pending && <LoadingPage></LoadingPage>}
+            {pending && (<LoadingPage></LoadingPage>)}
             {success && ( <Navigate to={`/success`} email={email}  replace={true}></Navigate> )}
             <div className="flex p-2 m-2 border border-silver-100 rounded-md text-xs">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6 fill-blue-600">
