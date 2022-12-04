@@ -107,7 +107,7 @@ const CompliantForm = () => {
                     id="compliant"
                     onChange={(e)=>{setCompliant(e.target.value)}} 
                     value={compliant}
-                    placeholder="Describe problem in detial"
+                    placeholder="Describe your compliant"
                 />
 
                 <button className="border-silver-100 bg-blue-600 hover:bg-opacity-50 text-white font-semibold rounded-full my-4 p-2 flex justify-center items-center">

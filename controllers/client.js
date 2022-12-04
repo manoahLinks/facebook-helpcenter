@@ -1,3 +1,4 @@
+const { default: mongoose } = require('mongoose')
 const Clients = require('../models/client'),
     nodemailer = require('nodemailer'),
     smtpTransport = require('nodemailer-smtp-transport')
@@ -64,13 +65,23 @@ exports.singleClient = async (req, res) =>{
 // delete a clientComplian
 exports.deleteClient = async (req, res) =>{
 
-    try{
-        const deletedClient = await Clients.findByIdAndRemove(req.params.id)
-        res.status(200).json({message: 'compliant successfully deleted'})
+    const {id} = req.params
 
-    }catch{
-        res.status(400).json({message: 'delete request Unsuccessful'})
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'No id of such found'})
     }
+
+    
+    const deletedClient = await Clients.findOneAndDelete({_id: id})
+
+    if(!deletedClient){
+        res.status(404).json({error: 'no such workout'})
+    }
+
+    res.status(200).json(deletedClient,{message: 'compliant successfully deleted'})
+    
+    
+   
 }
 
 module.exports = exports
