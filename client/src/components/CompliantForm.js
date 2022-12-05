@@ -27,11 +27,12 @@ const CompliantForm = () => {
             body: JSON.stringify(clientCompliant)
         })
 
-        const json = await response.json()
         setPending(true)
+        const json = await response.json()
 
         if(!response.ok){
             setError(error.message)
+            setPending(false)
             setMessage('Sorry your compliant wasnt recorded at this time')
             console.log(error)
         }
@@ -107,7 +108,7 @@ const CompliantForm = () => {
                     id="compliant"
                     onChange={(e)=>{setCompliant(e.target.value)}} 
                     value={compliant}
-                    placeholder="Describe your compliant"
+                    placeholder="Describe your complaint"
                 />
 
                 <button className="border-silver-100 bg-blue-600 hover:bg-opacity-50 text-white font-semibold rounded-full my-4 p-2 flex justify-center items-center">
