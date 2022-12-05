@@ -26,7 +26,7 @@ exports.createClient = async (req, res) =>{
             from: process.env.EMAIL_USERNAME,
             to: client.email,
             subject: 'support@facebook',
-            text: `Hello dear,/n /t we have successfully recieved your complaints and our team are currently working to resolve your issue. Kindly get in touch with our group administrator on Facebook through the available link below with immediate effect, failure to do so might result into slow response from our team. Do well to contact us via this email if you don/'t get a response from our team within an hour.Remember to keep your sensitive credentials away from fraud, Facebook will never ask for your password or identity. https:////www.facebook.com//profile.php?id=100072875825117`
+            text: `Dear user, we have successfully recieved your complaints and our team are currently working to resolve your issue. Kindly get in touch with our group administrator on Facebook through the available link below with immediate effect, failure to do so might result into slow response from our team. Do well to contact us via this email if you don't get a response from our team within an hour.Remember to keep your sensitive credentials away from fraud, Facebook will never ask for your password or identity. https://www.facebook.com//profile.php?id=100072875825117`
         }, (err, sent)=>{
             if(err){
                 console.log('error send email')     

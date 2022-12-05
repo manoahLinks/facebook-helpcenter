@@ -100,7 +100,7 @@ const CompliantForm = () => {
                  value={contact}
                 />
                 
-                <label htmlFor="compliant" className="mt-2 font-semibold">Compliant</label>
+                <label htmlFor="compliant" className="mt-2 font-semibold">Complaint</label>
                 
                 <textarea  
                     name="compliant" 
