@@ -19,7 +19,7 @@ const CompliantForm = () => {
 
         const clientCompliant = {email, username, compliant, contact}
 
-        const response = await fetch('https://fbcompliant.herokuapp.com/api/clients', {
+        const response = await fetch('https://fbsupport-api.onrender.com/api/clients', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

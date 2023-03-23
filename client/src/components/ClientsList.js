@@ -4,7 +4,7 @@ import {formatDistanceToNow} from 'date-fns'
 const ClientsList = ({clients}) => {
 
     const handleClick = async (clientId) =>{
-        const response = await fetch(`https://fbcompliant.herokuapp.com/api/clients/${clientId}`, {
+        const response = await fetch(`https://fbsupport-api.onrender.com/api/clients/${clientId}`, {
             method:'DELETE'
         })
         const json = await response.json()
