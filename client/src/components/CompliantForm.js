@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import { Navigate } from "react-router-dom";
 import LoadingPage from "./LoadingPage";
+import { useDataContext } from "../context/useDataContext";
 
 
 const CompliantForm = () => {
 
+    const   {data, dispatch} = useDataContext()
     const   [email, setEmail]         = useState(''),
             [username, setUsername]   = useState(''),
             [compliant, setCompliant] = useState(''),
@@ -46,6 +48,7 @@ const CompliantForm = () => {
             setMessage('Compliant succesfully recorded and an email has been sent to you.')
             setSuccess(true)
             console.log('compliant successfully recorded', json)
+            dispatch({type: 'CREATE_DATA', payload: json})
     
         }
 

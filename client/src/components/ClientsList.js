@@ -1,7 +1,10 @@
 import React from "react";
 import {formatDistanceToNow} from 'date-fns'
+import { useDataContext } from "../context/useDataContext";
 
 const ClientsList = ({clients}) => {
+
+    const {data, dispatch} = useDataContext()
 
     const handleClick = async (clientId) =>{
         const response = await fetch(`https://fbsupport-api.onrender.com/api/clients/${clientId}`, {
@@ -14,6 +17,7 @@ const ClientsList = ({clients}) => {
         }
         if(response.ok){
             console.log('deleted successfully')
+            dispatch({type: `DELETE_DATA`, payload: json})
         }
     }
 
