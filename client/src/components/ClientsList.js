@@ -1,6 +1,6 @@
 import React from "react";
 import {formatDistanceToNow} from 'date-fns'
-import { useDataContext } from "../context/useDataContext";
+import { useDataContext } from "../hooks/useDataContext";
 
 const ClientsList = ({clients}) => {
 

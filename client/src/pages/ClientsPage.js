@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import ClientsList from "../components/ClientsList";
 import ErrorPage from "../components/ErrorPage";
 import LoadingPage from "../components/LoadingPage";
-import { useDataContext } from "../context/useDataContext";
+import { useDataContext } from "../hooks/useDataContext";
 
 const ClientsPage = () => {
 

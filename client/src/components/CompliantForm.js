@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Navigate } from "react-router-dom";
 import LoadingPage from "./LoadingPage";
-import { useDataContext } from "../context/useDataContext";
+import { useDataContext } from "../hooks/useDataContext";
 
 
 const CompliantForm = () => {

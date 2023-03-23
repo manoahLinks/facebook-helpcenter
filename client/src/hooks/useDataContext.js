@@ -1,4 +1,4 @@
-import { DataContext } from "../hooks/dataContext";
+import { DataContext } from "../context/dataContext";
 import { useContext } from "react";
 
 export const useDataContext = () => {
